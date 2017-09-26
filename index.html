@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Hexidecimal Hangman</title>
+
+	<!-- link to Bootstrap-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
+	<!-- link to my css-->
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+	<!-- link to the jQuery Library -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<!-- link to the my javascript -->
+	<script type="text/javascript" src="assets/javascript/game.js"></script>
+
+</head>
+
+<body>
+
+	<header>
+
+		<button type="button" class="btn btn-light" id="startButton">
+			Start game
+		</button>
+
+		<button type="button" class="btn btn-dark" id="wins">
+			Wins: 
+		</button>
+
+	</header>
+
+	<div id="mainContent">
+
+		<section id="colorDivs">
+
+			<br>
+			<p>Identify this color:</p>
+
+			<div id="questionColorDiv">
+				
+			</div>
+
+			<br>
+			<p>Your latest guess:</p>
+
+			<div id="guessColorDiv">
+				
+			</div>
+
+		</section>
+
+		<section id="selectionDivs">
+
+			<div id="typeSelection">
+
+			<p>Guess the color in hexidecimal form!
+			<br>
+			<input type="text" name="">
+			<br>
+			There are three pairs of hexidecimal symbols. #RRGGBB --- R or red, G for green and B for blue. 
+
+			</p>
+				
+			</div>
+
+			<!--save for last, it will be difficult to link slider to text input !-->
+
+			<div id="slideSelection">
+
+				<div id="redSlider">
+					
+				</div>
+
+				<div id="greenSlider">
+					
+				</div>
+
+				<div id="blueSlider">
+					
+				</div>
+				
+			</div>
+
+		</section>
+
+		<section id="historyDivs">
+			
+			<div id="score">
+
+				<p>
+					Remaining Points: 800
+					<br>
+					800 - 
+				</p>
+				
+			</div>
+
+			<div id="pastGuesses">
+				
+			</div>
+
+		</section>
+
+	</div>
+
+
+</body>
+
+</html>
