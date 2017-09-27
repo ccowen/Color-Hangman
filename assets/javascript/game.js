@@ -1,27 +1,6 @@
 $(document).ready(function() {
 
-	$("#startButton").on("click", function () {
-		var randomColor = "#000000".replace(/0/g,function(){return (~~(Math.random()*16)).toString(16);});
-		$("#questionColorDiv").css('background-color', randomColor);
-		console.log(randomColor);
-	})
-
-	/* 
-	next steps initiate when user guesses a color
-
-	code to save hexidecimal submission
-
-	var selectedColors = array for past selections -- selectionInput
-	put latest guess in color div and past guesses div
-
-	$("#selectionInput").on("click", function () {
-		push selectionInput to selectedColors;
-		$(#guessColorDiv").css('background-color', selectionInput);
-		$("#pastGuesses").prepend("<div>" + selectionInput);
-		console.log("latest selected color " + selectionInput);
-	})
-
-	*/
+	var randomColor = "#000000".replace(/0/g,function(){return (~~(Math.random()*16)).toString(16);});
 
 	// convert hexidecimal to rgb for score calculation
 	function hexToRgb(hex) {
@@ -39,30 +18,76 @@ $(document).ready(function() {
 	    } : null;
 	}
 
-	/* examples
-	alert( hexToRgb("#0033ff").g ); // "51";
-	alert( hexToRgb("#03f").g ); // "51";
-	*/
-
 	var randomColorScoreR = hexToRgb(randomColor).r;
 	var randomColorScoreG = hexToRgb(randomColor).g;
 	var randomColorScoreB = hexToRgb(randomColor).b;
 
-	var selectionColorScoreR = hexToRgb(selectionInput).r;
-	var selectionColorScoreG = hexToRgb(selectionInput).g;
-	var selectionColorScoreB = hexToRgb(selectionInput).b;
+	console.log(randomColorScoreR);
+	console.log(randomColorScoreG);
+	console.log(randomColorScoreB);
 
-	var absoluteValueR = Math.abs(randomColorScoreR - selectionColorScoreR);
-	var absoluteValueG = Math.abs(randomColorScoreG - selectionColorScoreG);
-	var absoluteValueB = Math.abs(randomColorScoreB - selectionColorScoreB);
+	$("#startButton").on("click", function () {
+		$("#questionColorDiv").css('background-color', randomColor);
+		console.log(randomColor);
+	})
 
-	var scoreDifferenceRGB = absoluteValueR + absoluteValueG + absoluteValueB;
+	$("#selectionColor").on("click", function () {
+	
+		var selectionColorScoreR = document.getElementById('selectionColorR').value;
+		var selectionColorScoreG = document.getElementById('selectionColorG').value;
+		var selectionColorScoreB = document.getElementById('selectionColorB').value;
+
+		console.log("This is the selection score for R: " + selectionColorScoreR);
+		console.log("This is the selection score for G: " + selectionColorScoreG);
+		console.log("This is the selection score for B: " + selectionColorScoreB);
+
+		var absoluteValueR = Math.abs(randomColorScoreR - selectionColorScoreR);
+		var absoluteValueG = Math.abs(randomColorScoreG - selectionColorScoreG);
+		var absoluteValueB = Math.abs(randomColorScoreB - selectionColorScoreB); 
+
+		console.log("This is the absolute difference of R: " + absoluteValueR);
+		console.log("This is the absolute difference of G: " + absoluteValueG);
+		console.log("This is the absolute difference of B: " + absoluteValueB);
+
+		var scoreDifferenceRGB = absoluteValueR + absoluteValueG + absoluteValueB;
+
+		console.log("This is the calculated score difference of all colors: " + scoreDifferenceRGB);
+
+		console.log(scoreDifferenceRGB);
+
+		if (scoreDifferenceRGB === 0) {
+			alert("You guessed correctly! Great job!")
+			// add win
+		}
+		else {
+			alert("You missed the color by " + scoreDifferenceRGB + " points. Close! Try again.")
+			// subtract pointsa lost
+		}
+
+	})
+
+	/* 
+	next steps initiate when user guesses a color
+
+	code to save hexidecimal submission
+
+	var selectedColors = array for past selections -- selectionInput
+	put latest guess in color div and past guesses div
+
+	$("#selectionInput").on("click", function () {
+		push selectionInput to selectedColors;
+		$(#guessColorDiv").css('background-color', selectionInput);
+		$("#pastGuesses").prepend("<div>" + selectionInput);
+		console.log("latest selected color " + selectionInput);
+	})
+
+
 
 	// if scoreDifferenceRGB = 0, win++, board resets
 
 	// subtractt scoreDifferenceRGB from remaining points
 
-	// if score =< 0 points, game over; everything resets
+	// if score =< 0 points, game over; everything resets */
 
 });
 
