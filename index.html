@@ -22,12 +22,8 @@
 
 	<header>
 
-		<button type="button" class="btn btn-light" id="startButton">
-			Start game
-		</button>
-
 		<button type="button" class="btn btn-dark" id="wins">
-			Wins: 
+			Wins: <span id="score-wins"></span>
 		</button>
 
 	</header>
@@ -62,15 +58,15 @@
 			</p>
 
 			<form>
-				Red: <input type="number" id="selectionColorR"><br>
-				Green: <input type="number" id="selectionColorG"><br>
-				Blue: <input type="number" id="selectionColorB"><br><br>
+				Red: <input type="number" id="selectionColorR" min="0" max="256"><br>
+				Green: <input type="number" id="selectionColorG" min="0" max="256"><br>
+				Blue: <input type="number" id="selectionColorB" min="0" max="256"><br><br>
 				<input type="button" value="Submit" id="selectionColor">
 			</form>
 			
 			</div>
 
-			<!--save for last, it will be difficult to link slider to text input !-->
+			<!--save for last, it will be difficult to link slider to text input 
 
 			<div id="slideSelection">
 
@@ -86,7 +82,7 @@
 					
 				</div>
 				
-			</div>
+			</div> !-->
 
 		</section>
 
@@ -95,14 +91,17 @@
 			<div id="score">
 
 				<p>
-					Remaining Points: 800
+					Remaining Points: <span id="points"></span>
 					<br>
-					800 - 
+					Point Deduction History: 800 <span id="minusPoints"></span>
+					<br>
+					Past Guesses:
 				</p>
 				
 			</div>
 
 			<div id="pastGuesses">
+
 				
 			</div>
 

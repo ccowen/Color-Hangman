@@ -1,6 +1,14 @@
 $(document).ready(function() {
 
 	var randomColor = "#000000".replace(/0/g,function(){return (~~(Math.random()*16)).toString(16);});
+	$("#questionColorDiv").css('background-color', randomColor);
+	console.log("This is the selected color's hexidecimal code: " + randomColor);
+
+	var wins = 0;
+	document.getElementById("score-wins").textContent = wins;
+
+	var remainingPoints = 800
+	document.getElementById("points").textContent = remainingPoints; 
 
 	// convert hexidecimal to rgb for score calculation
 	function hexToRgb(hex) {
@@ -22,14 +30,10 @@ $(document).ready(function() {
 	var randomColorScoreG = hexToRgb(randomColor).g;
 	var randomColorScoreB = hexToRgb(randomColor).b;
 
-	console.log(randomColorScoreR);
-	console.log(randomColorScoreG);
-	console.log(randomColorScoreB);
+	console.log("This is the selected color's R value: " + randomColorScoreR);
+	console.log("This is the selected color's G value: " + randomColorScoreG);
+	console.log("This is the selected color's B value: " + randomColorScoreB);
 
-	$("#startButton").on("click", function () {
-		$("#questionColorDiv").css('background-color', randomColor);
-		console.log(randomColor);
-	})
 
 	$("#selectionColor").on("click", function () {
 	
@@ -40,6 +44,9 @@ $(document).ready(function() {
 		console.log("This is the selection score for R: " + selectionColorScoreR);
 		console.log("This is the selection score for G: " + selectionColorScoreG);
 		console.log("This is the selection score for B: " + selectionColorScoreB);
+
+		var guessColor = 'rgb(' + selectionColorScoreR + ', ' + selectionColorScoreG + ', ' +  selectionColorScoreB + ')';
+		$("#guessColorDiv").css('background-color', guessColor);
 
 		var absoluteValueR = Math.abs(randomColorScoreR - selectionColorScoreR);
 		var absoluteValueG = Math.abs(randomColorScoreG - selectionColorScoreG);
@@ -57,12 +64,22 @@ $(document).ready(function() {
 
 		if (scoreDifferenceRGB === 0) {
 			alert("You guessed correctly! Great job!")
-			// add win
+			wins++;
+			document.getElementById("score-wins").textContent = wins;
+
 		}
 		else {
 			alert("You missed the color by " + scoreDifferenceRGB + " points. Close! Try again.")
-			// subtract pointsa lost
+			remainingPoints = remainingPoints - scoreDifferenceRGB;
+			document.getElementById("points").textContent = remainingPoints; 
 		}
+
+		$("#pastGuesses").prepend("<div id=pastGuessesColorDiv>" + "</div>" + guessColor);
+		$("#pastGuessesColorDiv").css({'background-color': guessColor, 'width': '50px'});
+
+		$("#minusPoints").append(" - " + scoreDifferenceRGB);
+
+
 
 	})
 
