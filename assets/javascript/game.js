@@ -3,20 +3,26 @@ $(document).ready(function() {
 	//  reset function -------------------------------------------------
 	function reset(){
 
-		var remainingPoints = 800
+		remainingPoints = 800
 		document.getElementById("points").textContent = remainingPoints;
 
-		var pastGuessesArray = []
+		pastGuessesArray = [];
 
 		document.getElementById("form").reset();
 
-		document.getElementById("guessColorDiv").style.color = "white";
+		document.getElementById("guessColorDiv").style.background = "white";
+
+		$("#pastGuesses").empty();
+
+		$("#minusPoints").empty();
+
+
 
 		// random color picker and variables 
 
-		var randomColor = "#000000".replace(/0/g,function(){return (~~(Math.random()*16)).toString(16);});
+		randomColor = "#000000".replace(/0/g,function(){return (~~(Math.random()*16)).toString(16);});
 		$("#questionColorDiv").css('background-color', randomColor);
-		console.log("This is the selected color's hexidecimal code: " + randomColor);
+		console.log("This is the random color's hexidecimal code: " + randomColor);
 
 		// convert hexidecimal to rgb for score calculation
 		function hexToRgb(hex) {
@@ -34,13 +40,13 @@ $(document).ready(function() {
 		    } : null;
 		}
 
-		var randomColorScoreR = hexToRgb(randomColor).r;
-		var randomColorScoreG = hexToRgb(randomColor).g;
-		var randomColorScoreB = hexToRgb(randomColor).b;
+		randomColorScoreR = hexToRgb(randomColor).r;
+		randomColorScoreG = hexToRgb(randomColor).g;
+		randomColorScoreB = hexToRgb(randomColor).b;
 
-		console.log("This is the selected color's R value: " + randomColorScoreR);
-		console.log("This is the selected color's G value: " + randomColorScoreG);
-		console.log("This is the selected color's B value: " + randomColorScoreB);
+		console.log("This is the random color's R value: " + randomColorScoreR);
+		console.log("This is the random color's G value: " + randomColorScoreG);
+		console.log("This is the random color's B value: " + randomColorScoreB);
 
 	}
 
@@ -52,13 +58,13 @@ $(document).ready(function() {
 	var remainingPoints = 800
 	document.getElementById("points").textContent = remainingPoints; 
 
-	var pastGuessesArray = []
+	var pastGuessesArray = [];
 
 	// ---------------- random color picker and variables ---------------------
 
 	var randomColor = "#000000".replace(/0/g,function(){return (~~(Math.random()*16)).toString(16);});
 	$("#questionColorDiv").css('background-color', randomColor);
-	console.log("This is the selected color's hexidecimal code: " + randomColor);
+	console.log("This is the random color's hexidecimal code: " + randomColor);
 
 
 	// convert hexidecimal to rgb for score calculation
@@ -81,9 +87,9 @@ $(document).ready(function() {
 	var randomColorScoreG = hexToRgb(randomColor).g;
 	var randomColorScoreB = hexToRgb(randomColor).b;
 
-	console.log("This is the selected color's R value: " + randomColorScoreR);
-	console.log("This is the selected color's G value: " + randomColorScoreG);
-	console.log("This is the selected color's B value: " + randomColorScoreB);
+	console.log("This is the random color's R value: " + randomColorScoreR);
+	console.log("This is the random color's G value: " + randomColorScoreG);
+	console.log("This is the random color's B value: " + randomColorScoreB);
 
 
 	// ------------------ function on guess submission ------------------------------
@@ -114,7 +120,6 @@ $(document).ready(function() {
 		var scoreDifferenceRGB = absoluteValueR + absoluteValueG + absoluteValueB;
 
 		console.log("This is the calculated score difference of all colors: " + scoreDifferenceRGB);
-		console.log(scoreDifferenceRGB);
 
 		// how score affects stuff
 		if (pastGuessesArray.includes(guessColor) === true) {
@@ -128,8 +133,8 @@ $(document).ready(function() {
 		}
 		else {
 			// guessColor stuff for document
-			$("#pastGuesses").prepend("<p>" + guessColor + "<div id=pastGuessesColorDiv>");
-			$("#pastGuessesColorDiv").css({'background-color': guessColor, 'width': '50px'});
+			$("#pastGuesses").prepend("<div id=pastGuessesColorDiv>" + guessColor);
+			// $("#pastGuessesColorDiv").css({'background-color': guessColor, 'width': '50px'});
 			pastGuessesArray.push(guessColor);
 
 			//minus point record
