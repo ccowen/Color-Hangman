@@ -1,32 +1,64 @@
+body {
+    background-image: url("../images/white_wall_hash.png");
+}
 
-#colorDivs,
-#selectionDivs,
+.myContainer {
+    width: 73%;
+    margin-right: 3%;
+}
+
+#colorDivs {
+    width: 100%;
+    padding: 2%;
+    background-color: #fcfcfc;
+}
+
 #historyDivs {
     float: left;
-    width: 31%;
-    margin-right: 1%;
-    margin-left: 1%;
-    background-color: #FFFFFF;
-    margin-top: 30px;
-    padding-left: 2%;
-    padding-right: 2%;
-    margin-bottom: 30px;
-    border: solid;
-    border-color: black;
-    border-width: 3px;
+    margin: 2% 2% 0% 2%;
+    width: 20%;
+    padding: 1%;
 }
 
 #questionColorDiv,
 #guessColorDiv {
-	width: 200px;
-	height: 200px;
-	padding: 20px 20px 20px 20px;
-	margin: 20px 20px 20px 20px;
-	border: solid;
-    border-color: black;
-    border-width: 3px;
+	width: 100%;
+	height: 50px;
+
 }
 
-#wins {
-	margin-left: 200px;
+button {
+    margin: 1%;
+}
+
+.oneLine {
+    font-size: 20px;
+    padding: 15px 0px 15px 0px;
+    margin: 0px;
+}
+
+.twoLine {
+    font-size: 20px;
+    padding: 15px 0px 25px 0px;
+    margin: 0px;
+}
+
+#pastGuessesColorText {
+    float: left;
+    margin-bottom: 2px;
+}
+
+#pastGuessesColorDiv {
+    float: left;
+    width: 5%; 
+    height: 20px;
+
+}
+
+.floatLeft {
+    float: left;
+}
+
+.clear {
+    clear: both;
 }

@@ -20,47 +20,75 @@
 
 <body>
 
-	<header>
+	<div>
 
-		<button type="button" class="btn btn-dark" id="wins">
-			Wins: <span id="score-wins"></span>
-		</button>
+		<section id="historyDivs">
+			
+			<div id="score">
+
+				<p id="leftText">
+					Wins: <span id="score-wins"></span>
+					<br>
+					Remaining Points: <span id="points"></span>
+					<br>
+					Point Deduction History: 800 <span id="minusPoints"></span>
+				</p>
+
+				<p>
+
+					<span class="floatLeft"> 
+						Past Guesses:
+					</span>
+
+				<span id="pastGuesses">
+
+				</span>
+
+				</p>
+
+				<br>
+
+				<p class="clear">
+					Message Board:
+
+				</p>
+
+			</div>
+
+		</div>
 
 	</header>
 
-	<div id="mainContent">
+	<div class="container myContainer">
 
 		<section id="colorDivs">
 
-			<br>
-			<p>Identify this color:</p>
+			<p class="oneLine">Identify this color:</p>
 
 			<div id="questionColorDiv">
 				
 			</div>
 
-			<br>
-			<p>Your latest guess:</p>
+			<p class="oneLine">Your latest guess:</p>
 
 			<div id="guessColorDiv">
 				
 			</div>
 
-		</section>
-
-		<section id="selectionDivs">
-
 			<div id="typeSelection">
 
-			<p>Guess how much red, green, and blue light make up this color! 
-				Pick a number from 0 to 265.
+			<p class="twoLine">
+
+				How much red, green, and blue light make up this color?
 				<br>
+				Pick a number from 0 to 265.
+				
 			</p>
 
 			<form id="form">
-				Red: <input type="number" id="selectionColorR" min="0" max="256"><br>
-				Green: <input type="number" id="selectionColorG" min="0" max="256"><br>
-				Blue: <input type="number" id="selectionColorB" min="0" max="256"><br><br>
+				Red: <input type="number" id="selectionColorR" min="0" max="256">
+				Green: <input type="number" id="selectionColorG" min="0" max="256">
+				Blue: <input type="number" id="selectionColorB" min="0" max="256">
 				<input type="button" value="Submit" id="selectionColor">
 			</form>
 			
@@ -86,26 +114,6 @@
 
 		</section>
 
-		<section id="historyDivs">
-			
-			<div id="score">
-
-				<p>
-					Remaining Points: <span id="points"></span>
-					<br>
-					Point Deduction History: 800 <span id="minusPoints"></span>
-					<br>
-					Past Guesses:
-				</p>
-				
-			</div>
-
-			<div id="pastGuesses">
-
-				
-			</div>
-
-		</section>
 
 	</div>
 

@@ -16,8 +16,6 @@ $(document).ready(function() {
 
 		$("#minusPoints").empty();
 
-
-
 		// random color picker and variables 
 
 		randomColor = "#000000".replace(/0/g,function(){return (~~(Math.random()*16)).toString(16);});
@@ -133,8 +131,12 @@ $(document).ready(function() {
 		}
 		else {
 			// guessColor stuff for document
-			$("#pastGuesses").prepend("<div id=pastGuessesColorDiv>" + guessColor);
-			// $("#pastGuessesColorDiv").css({'background-color': guessColor, 'width': '50px'});
+			$("#pastGuesses").prepend("<div id='pastGuessesColorDiv'</div>");
+
+			$("#pastGuesses").prepend("<p id='pastGuessesColorText'>" + guessColor + "</p>");
+
+			$("#pastGuessesColorDiv").css({'background-color': guessColor});
+
 			pastGuessesArray.push(guessColor);
 
 			//minus point record
