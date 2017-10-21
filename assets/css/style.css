@@ -44,15 +44,15 @@ button {
 }
 
 #pastGuessesColorText {
-    float: left;
     margin-bottom: 2px;
 }
 
 #pastGuessesColorDiv {
     float: left;
-    width: 5%; 
+    width: 20%;
     height: 20px;
-
+    margin-right: 10px;
+    margin-top: 4px;
 }
 
 .floatLeft {

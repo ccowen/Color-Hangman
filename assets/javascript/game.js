@@ -8,6 +8,8 @@ $(document).ready(function() {
 
 		pastGuessesArray = [];
 
+		guess = 0;
+
 		document.getElementById("form").reset();
 
 		document.getElementById("guessColorDiv").style.background = "white";
@@ -15,6 +17,8 @@ $(document).ready(function() {
 		$("#pastGuesses").empty();
 
 		$("#minusPoints").empty();
+
+		$("#messageBoard").empty();
 
 		// random color picker and variables 
 
@@ -58,6 +62,8 @@ $(document).ready(function() {
 
 	var pastGuessesArray = [];
 
+	var guess = 0;
+
 	// ---------------- random color picker and variables ---------------------
 
 	var randomColor = "#000000".replace(/0/g,function(){return (~~(Math.random()*16)).toString(16);});
@@ -92,6 +98,8 @@ $(document).ready(function() {
 
 	// ------------------ function on guess submission ------------------------------
 	$("#selectionColor").on("click", function () {
+
+		guess++;
 	
 		// store selection
 		var selectionColorScoreR = document.getElementById('selectionColorR').value;
@@ -121,19 +129,20 @@ $(document).ready(function() {
 
 		// how score affects stuff
 		if (pastGuessesArray.includes(guessColor) === true) {
-			alert("You already guessed that color. Try a different color!");
+			$("#messageBoard").prepend("<p> (" + guess + ") You already guessed that color. Try a different color!</p>");
 		}
 		else if (scoreDifferenceRGB === 0) {
-			alert("You guessed correctly! Great job!")
+			$("#messageBoard").prepend("<p> (" + guess + ") You guessed correctly! Great job!</p>")
 			wins++;
 			document.getElementById("score-wins").textContent = wins;
 			reset();
 		}
 		else {
 			// guessColor stuff for document
-			$("#pastGuesses").prepend("<div id='pastGuessesColorDiv'</div>");
 
 			$("#pastGuesses").prepend("<p id='pastGuessesColorText'>" + guessColor + "</p>");
+
+			$("#pastGuesses").prepend("<div id='pastGuessesColorDiv'</div>");
 
 			$("#pastGuessesColorDiv").css({'background-color': guessColor});
 
@@ -142,7 +151,7 @@ $(document).ready(function() {
 			//minus point record
 			$("#minusPoints").append(" - " + scoreDifferenceRGB);
 
-			alert("You missed the color by " + scoreDifferenceRGB + " points. Close! Try again.")
+			$("#messageBoard").prepend("<p> (" + guess + ") You missed the color by " + scoreDifferenceRGB + " points. Close! Try again.</p>")
 			remainingPoints = remainingPoints - scoreDifferenceRGB;
 			document.getElementById("points").textContent = remainingPoints;
 			if (remainingPoints <= 0) {
