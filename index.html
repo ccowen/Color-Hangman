@@ -10,91 +10,102 @@
 	<!-- link to my css-->
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
-	<!-- link to the jQuery Library -->
+	<!-- link to the jQuery Library !-->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-	<!-- link to the my javascript -->
+	<!-- link to the my javascript !-->
 	<script type="text/javascript" src="assets/javascript/game.js"></script>
+
+	<!-- google fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
 
 </head>
 
 <body>
 
-	<div>
+	<section id="historyDivs">
+		
+		<div id="score">
 
-		<section id="historyDivs">
+			<p id="redTitle">RED</p>
+
+			<p id="greenTitle">GREEN</p>
+
+			<p id="blueTitle">BLUE</p>
+
+			<p id="title">COLOR GAME!</p>
+
+			<p class="clear"> 
+				Wins:
+				<span id="score-wins"></span>
+			</p>
 			
-			<div id="score">
+			<p> 
+				Remaining Points:
+				<span id="points"></span>
+			</p>
+			
+			<p> 
+				Point Deduction History: 800
+				<span id="minusPoints"></span>
+			</p>
 
-				<p id="leftText">
-					Wins: <span id="score-wins"></span>
-					<br>
-					Remaining Points: <span id="points"></span>
-					<br>
-					Point Deduction History: 800 <span id="minusPoints"></span>
-				</p>
+			<p class="clear">
 
-				<p>
+				<span> 
+					Past Guesses:
+				</span>
 
-					<span> 
-						Past Guesses:
-					</span>
+			</p>
 
-				</p>
-
-				<div id="pastGuesses">
-
-				</div>
-
-				<br>
-
-				<p class="clear">
-					Message Board:
-
-					<p id="messageBoard">
-
-					</p>
-
-				</p>
+			<div id="pastGuesses">
 
 			</div>
 
+			
+
+			<p class="clear"> Message Board:
+
+				<p id="messageBoard"></p>
+
+			</p>
+
+
+
 		</div>
 
-	</header>
+	</section>
 
 	<div class="container myContainer">
 
 		<section id="colorDivs">
 
-			<p class="oneLine">Identify this color:</p>
+			<p class="aboveColorDiv">Identify this color:</p>
 
-			<div id="questionColorDiv">
-				
-			</div>
+			<div id="questionColorDiv"></div>
 
-			<p class="oneLine">Your latest guess:</p>
+			<p class="aboveColorDiv">Your latest guess:</p>
 
-			<div id="guessColorDiv">
-				
-			</div>
+			<div id="guessColorDiv"></div>
 
 			<div id="typeSelection">
 
-			<p class="twoLine">
+				<p class="aboveFormDiv">
 
-				How much red, green, and blue light make up this color?
-				<br>
-				Pick a number from 0 to 265.
-				
-			</p>
+					How much red, green, and blue light make up this color?
+					<br>
+					Pick a number from 0 to 265.
+					
+				</p>
 
-			<form id="form">
-				Red: <input type="number" id="selectionColorR" min="0" max="256">
-				Green: <input type="number" id="selectionColorG" min="0" max="256">
-				Blue: <input type="number" id="selectionColorB" min="0" max="256">
-				<input type="button" value="Submit" id="selectionColor">
-			</form>
+				<form id="form">
+
+					Red: <input type="number" id="selectionColorR" min="0" max="256">
+					Green: <input type="number" id="selectionColorG" min="0" max="256">
+					Blue: <input type="number" id="selectionColorB" min="0" max="256">
+					<input type="button" value="Submit" class="btn btn-outline-secondary" id="selectionColorButton">
+
+				</form>
 			
 			</div>
 

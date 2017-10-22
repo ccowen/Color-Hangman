@@ -97,7 +97,7 @@ $(document).ready(function() {
 
 
 	// ------------------ function on guess submission ------------------------------
-	$("#selectionColor").on("click", function () {
+	$("#selectionColorButton").on("click", function () {
 
 		guess++;
 	
@@ -132,7 +132,7 @@ $(document).ready(function() {
 			$("#messageBoard").prepend("<p> (" + guess + ") You already guessed that color. Try a different color!</p>");
 		}
 		else if (scoreDifferenceRGB === 0) {
-			$("#messageBoard").prepend("<p> (" + guess + ") You guessed correctly! Great job!</p>")
+			alert("You guessed correctly! Great job!")
 			wins++;
 			document.getElementById("score-wins").textContent = wins;
 			reset();
