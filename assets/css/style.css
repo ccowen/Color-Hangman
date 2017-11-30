@@ -2,7 +2,7 @@
 font-family: 'Open Sans', sans-serif; */
 
 body {
-    background-image: url("../images/tex2res5.png");
+    background-image: url("../images/polka-dots.png");
 }
 
 p {
@@ -13,44 +13,61 @@ p {
 /* left panel ----------------------------------- */
 #historyDivs {
     background-color: white;
-    margin: 2% 1% 0% 2%;
+    margin: 3% 1% 0% 2%;
     width: 20%;
     padding: 1%;
     float: left;
+    opacity: 0.8;
+}
+
+#rgbButtons {
+    clear: both;
+    margin: 5% 0% 15% 0%;
 }
 
 /* game title */
-#redTitle,
-#greenTitle,
-#blueTitle,
-#title {
-    clear: both;
-    float: left;
-    height: 40px;
-    margin: 10px 0px 5px 0px;
-    padding: 0px 10px 0px 10px;
-    font-size: 30px;
-    color: white;
-    letter-spacing: 2px;
-    font-family: 'Roboto', sans-serif;
+.btn {
+    font-family: 'Cabin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
+    border-radius: 0; 
 }
 
 #redTitle {
-    background-color: rgb(256, 0, 0);
+    border: 2px solid rgb(256, 0, 0);
+    color: rgb(256, 0, 0);
 }
 
 #greenTitle {
-    background-color: rgb(0, 256, 0);
+    border: 2px solid rgb(0, 256, 0);
+    color: rgb(0, 256, 0);
 }
 
 #blueTitle {
-    background-color: rgb(0, 0, 256);
+    border: 2px solid rgb(0, 0, 256);
+    color: rgb(0, 0, 256);
 }
 
-#title {
-    background-image: url("../images/spectrum.png");
-    background-size: 100%;
-    margin-bottom: 15px;
+#redTitle,
+#greenTitle,
+#blueTitle {
+    margin: 0% 2% 0% 2%;
+}
+
+#score {
+    clear: both;
+    font-family: 'Cabin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+}
+
+.weightCabin {
+    font-weight: bold;
+    background-color: black;
+    color: white;
+    padding: 0px 5px 0px 5px;
 }
 
 #pastGuessesColorText {
@@ -74,7 +91,7 @@ p {
 .myContainer {
     width: 74%;
     margin: 2% 2% 0% 1%;
-    float: right;
+    float: left;
 }
 .aboveColorDiv,
 .aboveFormDiv {
