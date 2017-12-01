@@ -10,30 +10,44 @@ p {
     margin: 4px 0px 0px 0px;
 }
 
-/* left panel ----------------------------------- */
-#historyDivs {
-    background-color: white;
-    margin: 3% 1% 0% 2%;
-    width: 20%;
-    padding: 1%;
-    float: left;
-    opacity: 0.8;
+.myContainer {
+    padding-top: 100px;
+    padding-bottom: 50px;
 }
 
-#rgbButtons {
-    clear: both;
-    margin: 5% 0% 15% 0%;
-}
-
-/* game title */
 .btn {
     font-family: 'Cabin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-weight: 400;
-    -webkit-transition: all 0.3s ease-in-out;
-    -moz-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
     text-transform: uppercase;
     border-radius: 0; 
+}
+
+/* left panel ----------------------------------- */
+#historyDivs {
+    background-color: lightgray;
+    width: 27%;
+    padding: 1%;
+    float: left;
+    opacity: 0.9;
+    height: 400px;
+    overflow: scroll;
+    border-right: 20px solid white;
+}
+
+/*the div for the buttons*/
+#rgbButtons {
+    clear: both;
+    overflow: auto;
+    padding-bottom: 10px;
+}
+
+/*the rgb buttons*/
+#redTitle,
+#greenTitle,
+#blueTitle {
+    margin: 0% 2% 0% 2%;
+    background-color: black;
+    float: left;
 }
 
 #redTitle {
@@ -51,12 +65,6 @@ p {
     color: rgb(0, 0, 256);
 }
 
-#redTitle,
-#greenTitle,
-#blueTitle {
-    margin: 0% 2% 0% 2%;
-}
-
 #score {
     clear: both;
     font-family: 'Cabin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -70,43 +78,46 @@ p {
     padding: 0px 5px 0px 5px;
 }
 
-#pastGuessesColorText {
-    margin-bottom: 2px;
+.pastGuessesColorText {
+    margin: 4px 0px 8px 0px;
 }
 
-#pastGuessesColorDiv {
+.messages {
+    text-transform: none;
+    padding-left: 5px;
+    line-height: 1.2;
+    padding-top: 5px;
+}
+
+/* right panel ----------------------------------- */
+#colorSection {
+    background-color: white;
+    padding: 5px 15px 10px 15px;
+    width: 67%;
+    height: 400px;
+    overflow: auto;
+    float: left;
+}
+
+.aboveColorDiv,
+.aboveFormDiv {
+    margin: 0px 0px 15px 5px;
+    padding-top: 15px;
+}
+
+.aboveColorDiv {
+    font-family: 'Cabin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.pastGuessesColorDiv {
     float: left;
     width: 20%;
     height: 20px;
     margin-right: 10px;
     margin-top: 4px;
-}
-
-.clear {
-    clear: both;
-    margin-top: 20px;
-}
-
-/* right panel ----------------------------------- */
-.myContainer {
-    width: 74%;
-    margin: 2% 2% 0% 1%;
-    float: left;
-}
-.aboveColorDiv,
-.aboveFormDiv {
-    margin: 0px 0px 15px 5px;
-}
-
-.aboveFormDiv {
-    padding-top: 15px;
-}
-
-#colorDivs {
-    background-color: white;
-    width: 100%;
-    padding: 2%;
-    background-size: 80px 80px;
+    margin-left: 5px;
 }
 
 /* where the actual colors go */
